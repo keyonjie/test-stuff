@@ -1,0 +1,78 @@
+From 0b6d1117766ece6d9f5ed57df38d0563aebdc8c0 Mon Sep 17 00:00:00 2001
+From: Jie Yang <yang.jie@intel.com>
+Date: Wed, 7 Jan 2015 09:02:00 +0800
+Subject: [PATCH 1/8] ASoC debug
+
+---
+ drivers/dma/dw/Makefile   | 1 +
+ sound/Makefile            | 2 +-
+ sound/core/Makefile       | 2 +-
+ sound/soc/Makefile        | 1 +
+ sound/soc/codecs/Makefile | 1 +
+ sound/soc/intel/Makefile  | 1 +
+ 6 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/dma/dw/Makefile b/drivers/dma/dw/Makefile
+index 3eebd1c..9a48a3d 100644
+--- a/drivers/dma/dw/Makefile
++++ b/drivers/dma/dw/Makefile
+@@ -1,3 +1,4 @@
++EXTRA_CFLAGS += -DDEBUG
+ obj-$(CONFIG_DW_DMAC_CORE)	+= dw_dmac_core.o
+ dw_dmac_core-objs	:= core.o
+ 
+diff --git a/sound/Makefile b/sound/Makefile
+index ce9132b..6d1f22c 100644
+--- a/sound/Makefile
++++ b/sound/Makefile
+@@ -1,6 +1,6 @@
+ # Makefile for the Linux sound card driver
+ #
+-
++EXTRA_CFLAGS += -DDEBUG
+ obj-$(CONFIG_SOUND) += soundcore.o
+ obj-$(CONFIG_SOUND_PRIME) += sound_firmware.o
+ obj-$(CONFIG_SOUND_PRIME) += oss/
+diff --git a/sound/core/Makefile b/sound/core/Makefile
+index 4daf2f5..bf3fa1d 100644
+--- a/sound/core/Makefile
++++ b/sound/core/Makefile
+@@ -2,7 +2,7 @@
+ # Makefile for ALSA
+ # Copyright (c) 1999,2001 by Jaroslav Kysela <perex@perex.cz>
+ #
+-
++EXTRA_CFLAGS += -DDEBUG
+ snd-y     := sound.o init.o memory.o info.o control.o misc.o device.o
+ snd-$(CONFIG_ISA_DMA_API) += isadma.o
+ snd-$(CONFIG_SND_OSSEMUL) += sound_oss.o info_oss.o
+diff --git a/sound/soc/Makefile b/sound/soc/Makefile
+index 5b3c8f6..34d5fa4 100644
+--- a/sound/soc/Makefile
++++ b/sound/soc/Makefile
+@@ -1,3 +1,4 @@
++EXTRA_CFLAGS += -DDEBUG
+ snd-soc-core-objs := soc-core.o soc-dapm.o soc-jack.o soc-cache.o soc-utils.o
+ snd-soc-core-objs += soc-pcm.o soc-compress.o soc-io.o soc-devres.o soc-ops.o
+ 
+diff --git a/sound/soc/codecs/Makefile b/sound/soc/codecs/Makefile
+index bbdfd1e..fe1b14c 100644
+--- a/sound/soc/codecs/Makefile
++++ b/sound/soc/codecs/Makefile
+@@ -1,3 +1,4 @@
++EXTRA_CFLAGS += -DDEBUG
+ snd-soc-88pm860x-objs := 88pm860x-codec.o
+ snd-soc-ab8500-codec-objs := ab8500-codec.o
+ snd-soc-ac97-objs := ac97.o
+diff --git a/sound/soc/intel/Makefile b/sound/soc/intel/Makefile
+index e928ec3..56546b1c 100644
+--- a/sound/soc/intel/Makefile
++++ b/sound/soc/intel/Makefile
+@@ -1,3 +1,4 @@
++EXTRA_CFLAGS += -DDEBUG
+ # Core support
+ snd-soc-sst-dsp-objs := sst-dsp.o sst-firmware.o
+ snd-soc-sst-acpi-objs := sst-acpi.o
+-- 
+1.9.1
+
