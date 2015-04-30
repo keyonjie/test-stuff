@@ -1,0 +1,25 @@
+From d804a999408fae4c644c8a08ec14916964c99aff Mon Sep 17 00:00:00 2001
+From: Jie Yang <yang.jie@intel.com>
+Date: Wed, 29 Apr 2015 15:25:09 +0800
+Subject: [PATCH] ALSA: enable debug logs
+
+Signed-off-by: Jie Yang <yang.jie@intel.com>
+---
+ sound/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sound/Makefile b/sound/Makefile
+index ce9132b..33a5af4 100644
+--- a/sound/Makefile
++++ b/sound/Makefile
+@@ -1,6 +1,6 @@
+ # Makefile for the Linux sound card driver
+ #
+-
++export KBUILD_CFLAGS += -DDEBUG
+ obj-$(CONFIG_SOUND) += soundcore.o
+ obj-$(CONFIG_SOUND_PRIME) += sound_firmware.o
+ obj-$(CONFIG_SOUND_PRIME) += oss/
+-- 
+1.9.1
+
