@@ -1,0 +1,2 @@
+amixer cset iface=MIXER,name='ldo2 event' 2
+amixer cset iface=MIXER,name='LDO2' off

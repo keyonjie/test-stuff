@@ -1,0 +1,4 @@
+amixer cset iface=MIXER,name='dmic1 event' 2
+amixer cset iface=MIXER,name='DMIC1 power' off
+amixer cset iface=MIXER,name='ADC 0 Mux power' off
+amixer cset iface=MIXER,name='bias level' 1

@@ -1,0 +1,9 @@
+amixer cset iface=MIXER,name='spk event' 2
+amixer cset iface=MIXER,name='SPO Switch' off
+amixer cset iface=MIXER,name='Front power' off
+amixer cset iface=MIXER,name='ldo2 event' 2
+amixer cset iface=MIXER,name='LDO2' off
+amixer cset iface=MIXER,name='HV' off
+amixer cset iface=MIXER,name='LDO1' off
+amixer cset iface=MIXER,name='VREF' off
+amixer cset iface=MIXER,name='bias level' 1
