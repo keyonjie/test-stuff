@@ -1,0 +1,27 @@
+From 781d24a3b7f422179de9b63239ac92b212a83213 Mon Sep 17 00:00:00 2001
+From: keyonjie <yang.jie@intel.com>
+Date: Sun, 6 Sep 2015 10:56:08 +0800
+Subject: [PATCH] ASoC: Intel: sst: set runtime suspend delay to 500s for
+ debugging
+
+Signed-off-by: keyonjie <yang.jie@intel.com>
+---
+ sound/soc/intel/common/sst-dsp.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sound/soc/intel/common/sst-dsp.h b/sound/soc/intel/common/sst-dsp.h
+index 1f45f18..1b6dd0c 100644
+--- a/sound/soc/intel/common/sst-dsp.h
++++ b/sound/soc/intel/common/sst-dsp.h
+@@ -30,7 +30,7 @@
+ #define SST_DMA_TYPE_DW		1
+ 
+ /* autosuspend delay 5s*/
+-#define SST_RUNTIME_SUSPEND_DELAY	(5 * 1000)
++#define SST_RUNTIME_SUSPEND_DELAY	(500 * 1000)
+ 
+ /* SST Shim register map
+  * The register naming can differ between products. Some products also
+-- 
+1.9.1
+
