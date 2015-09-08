@@ -1,3 +1,4 @@
+amixer cset iface=MIXER,name='HP power' off
 amixer cset iface=MIXER,name='spk event' 2
 amixer cset iface=MIXER,name='SPO Switch' off
 amixer cset iface=MIXER,name='Front power' off

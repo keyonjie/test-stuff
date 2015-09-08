@@ -1,7 +1,16 @@
 amixer cset iface=MIXER,name='bias level' 1
 amixer cset iface=MIXER,name='bias level' 2
-amixer cset iface=MIXER,name='ADC 0 Mux power' on
+amixer cset iface=MIXER,name='vref event' 0
+amixer cset iface=MIXER,name='VREF' on
+amixer cset iface=MIXER,name='HV' on
+amixer cset iface=MIXER,name='LDO1' on
+amixer cset iface=MIXER,name='LDO2' on
+amixer cset iface=MIXER,name='ldo2 event' 1
 amixer cset iface=MIXER,name='DMIC1 power' on
 amixer cset iface=MIXER,name='dmic1 event' 1  
+amixer cset iface=MIXER,name='mic1 event' 0  
+amixer cset iface=MIXER,name='ADC 0 Mux power' on
+amixer cset iface=MIXER,name='ADC 0 Mux' Mic  
+amixer cset iface=MIXER,name='ADC0 Capture Switch' on
 amixer cset iface=MIXER,name='bias level' 3
 

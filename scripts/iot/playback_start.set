@@ -9,4 +9,5 @@ amixer cset iface=MIXER,name='ldo2 event' 1
 amixer cset iface=MIXER,name='SPO Switch' on
 amixer cset iface=MIXER,name='spk event' 1
 amixer cset iface=MIXER,name='Front power' on
+amixer cset iface=MIXER,name='HP power' on
 amixer cset iface=MIXER,name='bias level' 3
