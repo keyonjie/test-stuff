@@ -6,7 +6,7 @@ for filename in ./compile/configs_64_builtin/*
 do
 	echo $filename >> ./build_test_result
 	cp $filename .config
-	sudo make arch=x86_64 -j 8 bzImage > ./build.log 2>&1
+	make arch=x86_64 -j 8 bzImage > ./build.log 2>&1
 	if [ $? -ne 0 ];then
 		echo "erro!" >> ./build_test_result
 		break
@@ -20,7 +20,7 @@ for filename in ./compile/configs_64_mod/*
 do
 	echo $filename >> ./build_test_result
 	cp $filename .config
-	sudo make arch=x86_64 -j 8 deb-pkg > ./build.log 2>&1
+	make arch=x86_64 -j 8 deb-pkg > ./build.log 2>&1
 	if [ $? -ne 0 ];then
 		echo "erro!" >> ./build_test_result
 		break
@@ -33,7 +33,7 @@ for filename in ./compile/configs_32_builtin/*
 do
 	echo $filename >> ./build_test_result
 	cp $filename .config
-	sudo make arch=x86_32 -j 8 bzImage > ./build.log 2>&1
+	make arch=x86_32 -j 8 bzImage > ./build.log 2>&1
 	if [ $? -ne 0 ];then
 		echo "erro!" >> ./build_test_result
 		break
@@ -45,7 +45,7 @@ for filename in ./compile/configs_32_mod/*
 do
 	echo $filename >> ./build_test_result
 	cp $filename .config
-	sudo make arch=x86_32 -j 8 deb-pkg > ./build.log 2>&1
+	make arch=x86_32 -j 8 deb-pkg > ./build.log 2>&1
 	if [ $? -ne 0 ];then
 		echo "erro!" >> ./build_test_result
 		break
