@@ -1,0 +1,48 @@
+From cda6aa6ee37fe165160045583e6952aa6a7e07fb Mon Sep 17 00:00:00 2001
+From: Jie Yang <yang.jie@intel.com>
+Date: Wed, 17 Aug 2016 10:22:32 +0800
+Subject: [PATCH] ASoC: Intel: bytcr-rt5651: enable capture route
+
+Signed-off-by: Jie Yang <yang.jie@intel.com>
+---
+ sound/soc/intel/boards/bytcr_rt5651.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/sound/soc/intel/boards/bytcr_rt5651.c b/sound/soc/intel/boards/bytcr_rt5651.c
+index 1c95ccc..be385d7 100644
+--- a/sound/soc/intel/boards/bytcr_rt5651.c
++++ b/sound/soc/intel/boards/bytcr_rt5651.c
+@@ -46,8 +46,10 @@ static const struct snd_soc_dapm_route byt_rt5651_audio_map[] = {
+ 	{"codec_in1", NULL, "ssp2 Rx"},
+ 	{"ssp2 Rx", NULL, "AIF1 Capture"},
+ 
+-	{"Headset Mic", NULL, "micbias1"}, /* lowercase for rt5651 */
+-	{"IN2P", NULL, "Headset Mic"},
++//	{"Headset Mic", NULL, "micbias1"}, /* lowercase for rt5651 */
++	{"micbias1", NULL, "Headset Mic"},
++//	{"IN2P", NULL, "Headset Mic"},
++	{"IN3P", NULL, "micbias1"},
+ 	{"Headphone", NULL, "HPOL"},
+ 	{"Headphone", NULL, "HPOR"},
+ 	{"Speaker", NULL, "LOUTL"},
+@@ -93,7 +95,7 @@ static int byt_rt5651_aif1_hw_params(struct snd_pcm_substream *substream,
+ 	struct snd_soc_dai *codec_dai = rtd->codec_dai;
+ 	int ret;
+ 
+-	snd_soc_dai_set_bclk_ratio(codec_dai, 50);
++	snd_soc_dai_set_bclk_ratio(codec_dai, 32);
+ 
+ 	ret = snd_soc_dai_set_sysclk(codec_dai, RT5651_SCLK_S_PLL1,
+ 				     params_rate(params) * 512,
+@@ -104,7 +106,7 @@ static int byt_rt5651_aif1_hw_params(struct snd_pcm_substream *substream,
+ 	}
+ 
+ 	ret = snd_soc_dai_set_pll(codec_dai, 0, RT5651_PLL1_S_BCLK1,
+-				  params_rate(params) * 50,
++				  params_rate(params) * 32,
+ 				  params_rate(params) * 512);
+ 	if (ret < 0) {
+ 		dev_err(rtd->dev, "can't set codec pll: %d\n", ret);
+-- 
+2.5.0
+
